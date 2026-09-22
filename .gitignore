@@ -44,9 +44,10 @@ next-env.d.ts
 Thumbs.db
 
 # Media files (large)
-*.mp4
 *.mov
 *.avi
+!frontend/public/videos/*.mp4
+!public/videos/*.mp4
 
 # Build artifacts
 *.nft.json
