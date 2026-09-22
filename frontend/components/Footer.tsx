@@ -1,6 +1,7 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { Mail, Phone, MapPin, ShieldAlert } from "lucide-react";
+import { Mail, Phone, MapPin, ShieldAlert, ExternalLink } from "lucide-react";
 import { BRAND_INFO } from "@/lib/data";
 import { YouTubeIcon, XIcon, TelegramIcon, WhatsAppIcon, LinkedInIcon, InstagramIcon, SubstackIcon } from "@/components/ui/Icons";
 
@@ -8,7 +9,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="contact" className="bg-surface border-t border-surface-border text-foreground-muted">
+    <footer id="contact" className="bg-[#061224] border-t border-slate-800 text-slate-400">
       
       {/* Main Footer Body */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
@@ -16,20 +17,31 @@ export function Footer() {
           
           {/* Brand & Philosophy Column */}
           <div className="lg:col-span-5 space-y-4">
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-serif font-bold text-sm">
-                BS
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-white p-1 flex items-center justify-center shadow-md">
+                <Image
+                  src="/images/logo.png"
+                  alt="Beat The Street Logo"
+                  width={36}
+                  height={36}
+                  className="object-contain"
+                />
               </div>
-              <span className="font-serif text-xl font-bold tracking-wider text-foreground">
-                {BRAND_INFO.name.toUpperCase()}
-              </span>
+              <div>
+                <span className="font-serif text-lg font-bold tracking-wider text-white block">
+                  {BRAND_INFO.name.toUpperCase()}
+                </span>
+                <span className="text-[10px] font-mono text-blue-400 uppercase tracking-widest">
+                  Capital Markets Research · Mumbai
+                </span>
+              </div>
             </div>
 
-            <p className="font-serif text-lg italic text-emerald-600 dark:text-emerald-400 font-medium">
+            <p className="font-serif text-base italic text-blue-300 font-medium">
               &ldquo;{BRAND_INFO.tagline}&rdquo;
             </p>
 
-            <p className="text-sm text-foreground-muted font-light leading-relaxed max-w-md">
+            <p className="text-xs sm:text-sm text-slate-400 font-light leading-relaxed max-w-md">
               Independent capital markets research and business insights platform empowering retail investors with forensic clarity and fundamental analysis in Mumbai, India.
             </p>
 
@@ -37,22 +49,22 @@ export function Footer() {
             <div className="space-y-2 pt-2 text-xs font-mono">
               <a
                 href={`mailto:${BRAND_INFO.email}`}
-                className="flex items-center gap-2.5 text-foreground hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+                className="flex items-center gap-2.5 text-slate-300 hover:text-white transition-colors"
               >
-                <Mail className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                <Mail className="w-4 h-4 text-blue-400 shrink-0" />
                 <span>{BRAND_INFO.email}</span>
               </a>
 
               <a
                 href={`tel:${BRAND_INFO.phone}`}
-                className="flex items-center gap-2.5 text-foreground hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+                className="flex items-center gap-2.5 text-slate-300 hover:text-white transition-colors"
               >
-                <Phone className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                <Phone className="w-4 h-4 text-blue-400 shrink-0" />
                 <span>{BRAND_INFO.phoneDisplay}</span>
               </a>
 
-              <div className="flex items-center gap-2.5 text-foreground-muted">
-                <MapPin className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+              <div className="flex items-center gap-2.5 text-slate-400">
+                <MapPin className="w-4 h-4 text-blue-400 shrink-0" />
                 <span>{BRAND_INFO.location}</span>
               </div>
             </div>
@@ -60,38 +72,38 @@ export function Footer() {
 
           {/* Quick Navigation Links */}
           <div className="lg:col-span-3 space-y-3">
-            <h4 className="text-xs font-mono font-semibold uppercase tracking-widest text-foreground">
+            <h4 className="text-xs font-mono font-semibold uppercase tracking-widest text-slate-200">
               Navigation
             </h4>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-xs sm:text-sm">
               <li>
-                <a href="#" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                <a href="#" className="hover:text-blue-400 transition-colors">
                   Home
                 </a>
               </li>
               <li>
-                <a href="#insights" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                <a href="#insights" className="hover:text-blue-400 transition-colors">
                   Insights & Case Studies
                 </a>
               </li>
               <li>
-                <a href="#coverage" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                <a href="#coverage" className="hover:text-blue-400 transition-colors">
                   Research Disciplines
                 </a>
               </li>
               <li>
-                <a href="#philosophy" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
-                  Signature Creed
+                <a href="#philosophy" className="hover:text-blue-400 transition-colors">
+                  Signature Philosophy
                 </a>
               </li>
               <li>
-                <a href="#ecosystem" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
-                  Content Ecosystem
+                <a href="#ecosystem" className="hover:text-blue-400 transition-colors">
+                  Media Ecosystem
                 </a>
               </li>
               <li>
-                <a href="#about" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
-                  About & Team
+                <a href="#about" className="hover:text-blue-400 transition-colors">
+                  About & Leadership
                 </a>
               </li>
             </ul>
@@ -99,7 +111,7 @@ export function Footer() {
 
           {/* Connected Channels */}
           <div className="lg:col-span-4 space-y-3">
-            <h4 className="text-xs font-mono font-semibold uppercase tracking-widest text-foreground">
+            <h4 className="text-xs font-mono font-semibold uppercase tracking-widest text-slate-200">
               Official Channels
             </h4>
             <div className="grid grid-cols-2 gap-2 text-xs">
@@ -107,9 +119,9 @@ export function Footer() {
                 href={BRAND_INFO.socials.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 p-2.5 rounded-lg bg-surface-card border border-surface-border hover:border-slate-400 dark:hover:border-slate-700 hover:text-foreground transition-colors shadow-sm"
+                className="flex items-center gap-2 p-2.5 rounded-lg bg-slate-900/90 border border-slate-800 hover:border-slate-700 hover:text-white transition-colors"
               >
-                <WhatsAppIcon className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+                <WhatsAppIcon className="w-4 h-4 text-emerald-400" />
                 <span>WhatsApp</span>
               </a>
 
@@ -117,9 +129,9 @@ export function Footer() {
                 href={BRAND_INFO.socials.telegram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 p-2.5 rounded-lg bg-surface-card border border-surface-border hover:border-slate-400 dark:hover:border-slate-700 hover:text-foreground transition-colors shadow-sm"
+                className="flex items-center gap-2 p-2.5 rounded-lg bg-slate-900/90 border border-slate-800 hover:border-slate-700 hover:text-white transition-colors"
               >
-                <TelegramIcon className="w-4 h-4 text-sky-600 dark:text-sky-400" />
+                <TelegramIcon className="w-4 h-4 text-sky-400" />
                 <span>Telegram</span>
               </a>
 
@@ -127,9 +139,9 @@ export function Footer() {
                 href={BRAND_INFO.socials.substack}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 p-2.5 rounded-lg bg-surface-card border border-surface-border hover:border-slate-400 dark:hover:border-slate-700 hover:text-foreground transition-colors shadow-sm"
+                className="flex items-center gap-2 p-2.5 rounded-lg bg-slate-900/90 border border-slate-800 hover:border-slate-700 hover:text-white transition-colors"
               >
-                <SubstackIcon className="w-4 h-4 text-amber-600 dark:text-amber-400" />
+                <SubstackIcon className="w-4 h-4 text-amber-400" />
                 <span>Substack</span>
               </a>
 
@@ -137,9 +149,9 @@ export function Footer() {
                 href={BRAND_INFO.socials.youtube}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 p-2.5 rounded-lg bg-surface-card border border-surface-border hover:border-slate-400 dark:hover:border-slate-700 hover:text-foreground transition-colors shadow-sm"
+                className="flex items-center gap-2 p-2.5 rounded-lg bg-slate-900/90 border border-slate-800 hover:border-slate-700 hover:text-white transition-colors"
               >
-                <YouTubeIcon className="w-4 h-4 text-red-500 dark:text-red-400" />
+                <YouTubeIcon className="w-4 h-4 text-red-400" />
                 <span>YouTube</span>
               </a>
 
@@ -147,9 +159,9 @@ export function Footer() {
                 href={BRAND_INFO.socials.x}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 p-2.5 rounded-lg bg-surface-card border border-surface-border hover:border-slate-400 dark:hover:border-slate-700 hover:text-foreground transition-colors shadow-sm"
+                className="flex items-center gap-2 p-2.5 rounded-lg bg-slate-900/90 border border-slate-800 hover:border-slate-700 hover:text-white transition-colors"
               >
-                <XIcon className="w-4 h-4 text-slate-800 dark:text-sky-400" />
+                <XIcon className="w-4 h-4 text-slate-300" />
                 <span>X (Twitter)</span>
               </a>
 
@@ -157,9 +169,9 @@ export function Footer() {
                 href={BRAND_INFO.socials.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 p-2.5 rounded-lg bg-surface-card border border-surface-border hover:border-slate-400 dark:hover:border-slate-700 hover:text-foreground transition-colors shadow-sm"
+                className="flex items-center gap-2 p-2.5 rounded-lg bg-slate-900/90 border border-slate-800 hover:border-slate-700 hover:text-white transition-colors"
               >
-                <LinkedInIcon className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                <LinkedInIcon className="w-4 h-4 text-blue-400" />
                 <span>LinkedIn</span>
               </a>
 
@@ -167,9 +179,9 @@ export function Footer() {
                 href={BRAND_INFO.socials.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 p-2.5 rounded-lg bg-surface-card border border-surface-border hover:border-slate-400 dark:hover:border-slate-700 hover:text-foreground transition-colors col-span-2 shadow-sm"
+                className="flex items-center gap-2 p-2.5 rounded-lg bg-slate-900/90 border border-slate-800 hover:border-slate-700 hover:text-white transition-colors col-span-2"
               >
-                <InstagramIcon className="w-4 h-4 text-pink-600 dark:text-pink-400" />
+                <InstagramIcon className="w-4 h-4 text-pink-400" />
                 <span>Instagram (@beatthestreet10)</span>
               </a>
             </div>
@@ -178,38 +190,39 @@ export function Footer() {
         </div>
 
         {/* Regulatory & Educational Disclaimer Area */}
-        <div className="mt-12 pt-8 border-t border-surface-border">
-          <div className="p-4 sm:p-5 rounded-xl bg-surface-card border border-surface-border flex items-start gap-3 shadow-sm">
-            <ShieldAlert className="w-5 h-5 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
-            <div className="text-xs text-foreground-muted leading-relaxed space-y-1 font-light">
-              <span className="font-semibold text-foreground block">
+        <div className="mt-12 pt-8 border-t border-slate-800">
+          <div className="p-4 sm:p-5 rounded-xl bg-slate-900/60 border border-slate-800 flex items-start gap-3">
+            <ShieldAlert className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+            <div className="text-xs text-slate-400 leading-relaxed space-y-1 font-light">
+              <span className="font-semibold text-slate-200 block">
                 Educational & Research Disclaimer
               </span>
               <p>
                 {BRAND_INFO.disclaimer}
               </p>
-              <p className="text-[11px]">
-                Beat The Street is an independent capital markets educational and research platform based in Mumbai, Maharashtra, India.
+              <p className="text-[11px] text-slate-400">
+                Beat The Street is an independent capital markets research and business insights platform based in Mumbai, Maharashtra, India.
               </p>
             </div>
           </div>
         </div>
 
-        {/* Bottom Rights & Attribution Strip */}
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-foreground-muted">
+        {/* Bottom Rights & Client Demo Attribution Strip */}
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-400 pt-6 border-t border-slate-800/80">
           <div>
-            © {currentYear} {BRAND_INFO.name}. All rights reserved. Founded 2020.
+            © {currentYear} {BRAND_INFO.name}. All rights reserved. Founded {BRAND_INFO.foundingYear}.
           </div>
           <div className="flex items-center gap-4 sm:gap-6">
             <span>Mumbai, Maharashtra</span>
-            <span className="text-surface-border">•</span>
+            <span className="text-slate-700">·</span>
             <a
               href="https://www.digitaldukaans.in/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-foreground-muted hover:text-emerald-600 dark:hover:text-emerald-400 underline underline-offset-4 decoration-surface-border hover:decoration-emerald-500 transition-all inline-flex items-center gap-1 font-medium"
+              className="text-blue-400 hover:text-blue-300 font-sans font-medium flex items-center gap-1 underline underline-offset-4 decoration-blue-500/40 hover:decoration-blue-400 transition-all"
             >
               <span>Client Demo by Digital Dukaans</span>
+              <ExternalLink className="w-3 h-3 ml-0.5" />
             </a>
           </div>
         </div>

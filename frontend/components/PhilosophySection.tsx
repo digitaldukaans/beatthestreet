@@ -4,64 +4,54 @@ import { BRAND_INFO, PHILOSOPHY_PILLARS } from "@/lib/data";
 
 export function PhilosophySection() {
   return (
-    <section id="philosophy" className="relative py-24 md:py-32 bg-surface overflow-hidden border-y border-surface-border">
-    <section id="philosophy" className="relative py-16 sm:py-20 md:py-24 bg-surface overflow-hidden border-y border-surface-border">
+    <section id="philosophy" className="relative py-20 sm:py-24 md:py-28 bg-brand-navy-900 text-white overflow-hidden border-y border-brand-navy-800">
       
-      {/* Editorial background image with deep monochrome tint */}
+      {/* Background Graphic */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/philosophy-bg.jpeg"
           alt="Beat The Street Signature Philosophy Background"
           fill
           sizes="100vw"
-          className="object-cover object-center opacity-10 dark:opacity-15 filter grayscale contrast-125"
+          className="object-cover object-center opacity-10 filter grayscale contrast-125"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/95" />
-        <div className="absolute inset-0 financial-grid opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy-950 via-brand-navy-900/95 to-brand-navy-950" />
+        <div className="absolute inset-0 financial-grid-dark opacity-30" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Core Big Typographic Moment */}
-        <div className="max-w-4xl mb-14 md:mb-18">
-        {/* Core Typographic Moment */}
-        <div className="max-w-3xl mb-12">
+        {/* Core Typographic Statement */}
+        <div className="max-w-3xl mb-12 sm:mb-16">
           
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800/40 text-emerald-700 dark:text-emerald-400 text-xs font-mono uppercase tracking-widest mb-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800/40 text-emerald-700 dark:text-emerald-400 text-[10px] font-mono uppercase tracking-widest mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-950/80 border border-blue-500/40 text-blue-300 text-xs font-mono uppercase tracking-widest mb-5">
             <span>Foundational Creed</span>
           </div>
 
-          <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-foreground uppercase leading-[1.02] mb-6">
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-foreground uppercase leading-tight mb-4">
+          <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white uppercase leading-[1.05] mb-5">
             READ BUSINESS. <br />
             <span className="gold-gradient-text italic font-normal">
               NOT STOCK PRICES.
             </span>
           </h2>
 
-          <p className="text-lg sm:text-xl md:text-2xl text-foreground-muted font-serif italic max-w-3xl leading-relaxed">
-          <p className="text-sm sm:text-base md:text-lg text-foreground-muted font-serif italic max-w-2xl leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-slate-200 font-serif italic max-w-2xl leading-relaxed">
             &ldquo;Because understanding the business is often the first step toward understanding the market.&rdquo;
           </p>
 
         </div>
 
         {/* 3 Philosophy Pillars */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-10 border-t border-surface-border">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 border-t border-surface-border">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 pt-8 border-t border-brand-navy-800">
           {PHILOSOPHY_PILLARS.map((pillar) => (
             <div key={pillar.number} className="relative group">
-              <span className="font-mono text-3xl sm:text-4xl font-bold text-emerald-600/30 dark:text-emerald-500/30 block mb-3">
-              <span className="font-mono text-2xl sm:text-3xl font-bold text-emerald-600/40 dark:text-emerald-500/30 block mb-2">
+              <span className="font-mono text-3xl sm:text-4xl font-bold text-blue-500/40 block mb-2">
                 {pillar.number}
               </span>
-              <h3 className="font-serif text-xl sm:text-2xl font-bold text-foreground mb-2.5">
-              <h3 className="font-serif text-base sm:text-lg font-bold text-foreground mb-1.5">
+              <h3 className="font-serif text-lg sm:text-xl font-bold text-white mb-2">
                 {pillar.title}
               </h3>
-              <p className="text-sm text-foreground-muted leading-relaxed font-light">
-              <p className="text-xs sm:text-sm text-foreground-muted leading-relaxed font-light">
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
                 {pillar.description}
               </p>
             </div>

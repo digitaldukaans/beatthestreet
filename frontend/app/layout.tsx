@@ -1,10 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { BRAND_INFO } from "@/lib/data";
-import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const viewport: Viewport = {
-  themeColor: "#05080F",
+  themeColor: "#0A192F",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -66,14 +65,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth dark" suppressHydrationWarning>
+    <html lang="en" className="scroll-smooth">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className="bg-background text-foreground min-h-screen selection:bg-emerald-500/30 selection:text-emerald-300 antialiased font-sans">
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
+      <body className="bg-white text-slate-900 min-h-screen antialiased font-sans">
+        {children}
       </body>
     </html>
   );
